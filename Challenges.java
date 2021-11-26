@@ -201,6 +201,35 @@ public class Challenges
 
     return toReturn;
   }
+    
+    public static int fibFinder(int n) 
+    {
+       
+       int toReturn = 0;
+       //last two members in the Fibonacci sequence
+       int k1 = 0;
+       int k2 = 1;
+       
+       for(int i = 0; i <= n; i++)
+       {
+           if(i == 0)
+           {
+               toReturn = k1;
+           }
+           else if(i == 1)
+           {
+               toReturn = k2;
+           }
+           else
+           {
+               toReturn = k1 + k2;
+               k1 = k2;
+               k2 = toReturn;
+           }
+       }
+          
+       return toReturn;
+    }
      
     public static void main(String[] args)
     {  
@@ -211,5 +240,6 @@ public class Challenges
        System.out.println(Arrays.toString(flattenArray(new int[][]{{1, 2}, {3, 4, 5}})));
        System.out.println(Arrays.toString(productOfTheOthers(new int[]{1, 2, 3, 4, 5})));
        System.out.println(Arrays.toString(statsFinder(new int[]{500, 400, 400, 375, 300, 350, 325, 300})));
+       System.out.print(fibFinder(6));
     }
 }    
