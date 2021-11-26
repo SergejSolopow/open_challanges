@@ -74,7 +74,7 @@ public class Challenges
     }
     
     public static int[] missingNos(int[] array, int k) 
-        {
+    {
     
         int[] toReturn = new int[k];
         int[] tempArr = new int[array.length + k];
@@ -93,13 +93,58 @@ public class Challenges
             }
         }        
         return toReturn;
+    }
+    
+    public static int[] flattenArray(int[][] input)     {
+    
+        int[] toReturn = new int[input[0].length + input[1].length];
+    
+        int k = 0;
+        for(int[] i : input)
+        {
+            for(int j : i)
+            {
+                toReturn[k] = j;
+                k++;
+            }
+        }
+        return toReturn;    
+    }
+    
+    public static int[] productOfTheOthers(int[] array)
+    {
+    
+        int[] toReturn = new int[array.length];
+        int product;
+        for(int i = 0; i < array.length; i++)
+        {   
+            product = 1; 
+            for(int j = 0; j < array.length; j++)
+            {
+                if(i == j)
+                {
+                    product *= 1;
+                }
+                else
+                {
+                    product *= array[j];
+                }
+            }
+            
+            toReturn[i] = product;
+        }        
+        return toReturn;
   }
-   
+     
     public static void main(String[] args)
-    {       
+    {  
+       //Test all the methods
        System.out.println(fizzbuzz(16));
        System.out.println(primeFinder(13));
        System.out.println(Arrays.toString(missingNos(new int[]{1, 2, 4, 5, 6, 7, 8, 10}, 2)));
+       System.out.println(Arrays.toString(flattenArray(new int[][]{{1, 2}, {3, 4, 5}})));
+       System.out.println(Arrays.toString(productOfTheOthers(new int[]{1, 2, 3, 4, 5})));
     }
 }
 
+    
