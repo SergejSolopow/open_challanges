@@ -18,3 +18,6 @@ Problems solved are:
   
 6. Calculate the Mean and Mode
   Description: https://www.codecademy.com/code-challenges/code-challenge-calculate-the-mean-and-mode-java
+  
+7. Fibonacci Finder
+  Description: https://www.codecademy.com/code-challenges/code-challenge-fibonacci-finder-java
