@@ -1,5 +1,6 @@
 # open_challanges
 Some static JAVA methods for solution of logical tascs
+
 Problems solved are:
 1. FizzBuzz
   Description: https://www.codecademy.com/code-challenges/code-challenge-fizzbuzz-java
