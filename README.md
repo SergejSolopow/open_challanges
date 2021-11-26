@@ -22,3 +22,6 @@ Problems solved are:
   
 7. Fibonacci Finder
   Description: https://www.codecademy.com/code-challenges/code-challenge-fibonacci-finder-java
+
+8. Top Score Sorter
+  Description: https://www.codecademy.com/code-challenges/code-challenge-top-score-sorter-java
