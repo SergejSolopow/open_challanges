@@ -230,6 +230,29 @@ public class Challenges
           
        return toReturn;
     }
+    
+   public static int[] scoreSorter(int[] array, int topScore) 
+   {
+        
+        boolean isReplaced = true; 
+        int tempIndex;
+        while(isReplaced)
+        {
+            isReplaced = false;
+            for(int i = 0; i < array.length - 1; i++)
+            {            
+                if(array[i] < array[i + 1])
+                {
+                    tempIndex = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tempIndex;
+                    isReplaced = true;
+                }
+            }
+        }
+    
+        return array;
+    }
      
     public static void main(String[] args)
     {  
@@ -240,6 +263,7 @@ public class Challenges
        System.out.println(Arrays.toString(flattenArray(new int[][]{{1, 2}, {3, 4, 5}})));
        System.out.println(Arrays.toString(productOfTheOthers(new int[]{1, 2, 3, 4, 5})));
        System.out.println(Arrays.toString(statsFinder(new int[]{500, 400, 400, 375, 300, 350, 325, 300})));
-       System.out.print(fibFinder(6));
+       System.out.println(fibFinder(6));
+       System.out.println(Arrays.toString(scoreSorter(new int[]{1, 2, 3, 9999, 13}, 10000)));
     }
 }    
