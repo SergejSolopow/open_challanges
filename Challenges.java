@@ -134,6 +134,72 @@ public class Challenges
             toReturn[i] = product;
         }        
         return toReturn;
+    }
+    
+    public static double[] statsFinder(int[] array) 
+    {
+        double[] toReturn = new double[2];
+        //mean value
+        double sum = 0;
+        for(int i : array)
+        {
+            sum += i;
+        }
+        toReturn[0] = sum / array.length;
+
+        //finde out mode
+        //create ArrayList with unic modes
+        ArrayList<Integer> unicList = new ArrayList<Integer>();
+        boolean isThere = false;
+        
+        for(int i : array)
+        {
+            for(int j : unicList)
+            {
+                if(i == j)
+                {
+                    isThere = true;
+                    break;
+                }
+                else if(i != j)
+                {
+                    isThere = false;
+                }
+            }
+            
+            if(isThere == false)
+            {
+                unicList.add(i);
+            }
+        }        
+        
+        //Array with a mode intensity
+        int[] modeIntens = new int[unicList.size()];
+        for(int i = 0; i < unicList.size(); i++)
+        {
+            for(int j : array)
+            {
+                if(unicList.get(i) == j)
+                {
+                    modeIntens[i] += 1;
+                }
+            }
+        }        
+        
+        //compare mode intensity, finde out the most occuring value
+        //create ArrayList for the case of more than one mode
+        int position = 0;      
+        
+        for(int i = 0; i < modeIntens.length - 1; i++)
+        {
+            if(modeIntens[i] > modeIntens[position])
+            {
+                position = i;
+            }            
+        }
+        toReturn[1] = unicList.get(position);
+
+    return toReturn;
   }
      
     public static void main(String[] args)
@@ -144,7 +210,6 @@ public class Challenges
        System.out.println(Arrays.toString(missingNos(new int[]{1, 2, 4, 5, 6, 7, 8, 10}, 2)));
        System.out.println(Arrays.toString(flattenArray(new int[][]{{1, 2}, {3, 4, 5}})));
        System.out.println(Arrays.toString(productOfTheOthers(new int[]{1, 2, 3, 4, 5})));
+       System.out.println(Arrays.toString(statsFinder(new int[]{500, 400, 400, 375, 300, 350, 325, 300})));
     }
-}
-
-    
+}    
