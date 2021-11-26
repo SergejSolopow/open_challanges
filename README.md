@@ -15,3 +15,6 @@ Problems solved are:
 
 5. Product Of Everythig Else
   Description: https://www.codecademy.com/code-challenges/code-challenge-product-of-everything-else-java
+  
+6. Calculate the Mean and Mode
+  Description: https://www.codecademy.com/code-challenges/code-challenge-calculate-the-mean-and-mode-java
