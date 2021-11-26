@@ -72,11 +72,34 @@ public class Challenges
         
         return primeList; 
     }
+    
+    public static int[] missingNos(int[] array, int k) 
+        {
+    
+        int[] toReturn = new int[k];
+        int[] tempArr = new int[array.length + k];
+        int index = 0;
+        for(int i : array)
+        {
+            tempArr[i - 1] = i;
+        }
+        
+        for(int i = 0; i < tempArr.length; i++)
+        {
+            if(tempArr[i] == 0)
+            {
+                toReturn[index] = i + 1;
+                index++;
+            }
+        }        
+        return toReturn;
+  }
    
     public static void main(String[] args)
     {       
        System.out.println(fizzbuzz(16));
        System.out.println(primeFinder(13));
+       System.out.println(Arrays.toString(missingNos(new int[]{1, 2, 4, 5, 6, 7, 8, 10}, 2)));
     }
 }
 
