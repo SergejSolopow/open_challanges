@@ -40,12 +40,43 @@ public class Challenges
             arr.add(i);
         }
     }
+        
     return arr;
   }   
+    
+    public static ArrayList primeFinder(int n) 
+    {        
+        /*
+        initialise ArrayList of the Ineger type. 
+        */
+        ArrayList<Integer> primeList = new ArrayList<Integer>();
+        
+        /*
+        find out prime numbers using for() control flow
+        add primes to the arr using add method
+        */        
+        for(int i = 2; i <= n; i++ )
+        {
+            for(int j = 2; j <= i; j++)
+            {                
+                if(i%j == 0 && j != i)
+                {
+                    break;
+                }                
+                else if(i%j == 0 && j == i)
+                {
+                    primeList.add(j);
+                }
+            }
+        }
+        
+        return primeList; 
+    }
    
     public static void main(String[] args)
     {       
        System.out.println(fizzbuzz(16));
+       System.out.println(primeFinder(13));
     }
 }
 
