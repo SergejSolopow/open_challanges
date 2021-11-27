@@ -253,6 +253,54 @@ public class Challenges
     
         return array;
     }
+   
+   
+    public static int capturingRainwater(int[] heights) 
+    {
+        int toReturn = 0;
+        /*
+        Subrutine. Figure out the highest height. 
+        It will be used for flow control 
+        */
+        int maxHeight = 0;
+        for(int i : heights)
+        {
+            if(i > maxHeight)
+            {
+                maxHeight = i;
+            }
+        }
+        
+        boolean fixHeight;
+        int tempSum;
+        int k = 0;
+        
+        while(k != maxHeight)
+        {   
+            tempSum = 0;
+            fixHeight = false;
+            
+            for(int i : heights)
+            {
+                if(i > k && fixHeight == false)
+                {
+                    fixHeight = true;
+                }
+                else if(i <= k && fixHeight == true)
+                {
+                    tempSum++;
+                }
+                else if(i > k && fixHeight == true)
+                {                    
+                    toReturn = toReturn + tempSum;
+                    tempSum = 0;
+                }
+            }
+            k++;
+        }
+        
+        return toReturn;                
+    }
      
     public static void main(String[] args)
     {  
@@ -265,5 +313,6 @@ public class Challenges
        System.out.println(Arrays.toString(statsFinder(new int[]{500, 400, 400, 375, 300, 350, 325, 300})));
        System.out.println(fibFinder(6));
        System.out.println(Arrays.toString(scoreSorter(new int[]{1, 2, 3, 9999, 13}, 10000)));
+       System.out.println(capturingRainwater(new int[] {4, 2, 1, 3, 0, 1, 2}));
     }
 }    
