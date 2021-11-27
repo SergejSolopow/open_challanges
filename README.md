@@ -33,3 +33,7 @@ Problems solved are:
 8. Top Score Sorter
   
   Description: https://www.codecademy.com/code-challenges/code-challenge-top-score-sorter-java
+  
+9. Capturing Rainwater
+
+  Description: https://www.codecademy.com/code-challenges/code-challenge-capturing-rainwater-java
