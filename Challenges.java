@@ -301,6 +301,28 @@ public class Challenges
         
         return toReturn;                
     }
+    
+    public static int[] maxProfitDays(int[] stockPrices) 
+    {
+    // Add your code here
+        int[] toReturn = new int[2];
+        int maxRevenue = 0;
+        
+        for(int i = 0; i <= stockPrices.length; i++)
+        {
+            for(int j = i;   j < stockPrices.length; j++ )
+            {
+                if(stockPrices[j] - stockPrices[i] > maxRevenue)
+                {
+                    maxRevenue = stockPrices[j] - stockPrices[i];
+                    toReturn[0] = i;
+                    toReturn[1] = j;
+                }
+            }
+        }
+
+        return toReturn;
+    }
      
     public static void main(String[] args)
     {  
@@ -314,5 +336,6 @@ public class Challenges
        System.out.println(fibFinder(6));
        System.out.println(Arrays.toString(scoreSorter(new int[]{1, 2, 3, 9999, 13}, 10000)));
        System.out.println(capturingRainwater(new int[] {4, 2, 1, 3, 0, 1, 2}));
+       System.out.println(Arrays.toString(maxProfitDays(new int[]{17, 11, 60, 25, 150, 1, 31, 150})));
     }
 }    
