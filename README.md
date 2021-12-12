@@ -37,3 +37,7 @@ Problems solved are:
 9. Capturing Rainwater
 
   Description: https://www.codecademy.com/code-challenges/code-challenge-capturing-rainwater-java
+
+10. Maximize Stock Trading Profit 
+  
+  Description: https://www.codecademy.com/code-challenges/code-challenge-maximize-stock-trading-profit-java
