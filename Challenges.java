@@ -1,6 +1,7 @@
 package solopow.anytest;
 import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 
@@ -323,6 +324,41 @@ public class Challenges
 
         return toReturn;
     }
+    
+    public static int sumOfPrimeFactors(int n) 
+{   
+    ArrayList<Integer> primeList = new ArrayList<Integer>();
+    int sum = 0;
+    //first, the integer has to be prime
+    //second, the integer has to be factor of the "n"
+    for(int i = 2; i <= n; i++)
+        {
+            for(int j = 2; j <= i; j++)
+            {                
+                if(i%j == 0 && j != i)
+                {
+                    break;
+                }                
+                else if(i%j == 0 && j == i && n%j == 0)
+                {
+                    primeList.add(j);
+                }
+            }
+        }
+    
+    /* 
+    Let's make different from for() flow control
+    and iterate with Iterator interface class  
+    */
+    
+    Iterator iter = primeList.iterator();
+    while(iter.hasNext())
+    {
+        //(int) has to be used in order to unwrape <Integer> class
+        sum += (int)iter.next();
+    }
+    return sum;    
+}
      
     public static void main(String[] args)
     {  
@@ -337,5 +373,6 @@ public class Challenges
        System.out.println(Arrays.toString(scoreSorter(new int[]{1, 2, 3, 9999, 13}, 10000)));
        System.out.println(capturingRainwater(new int[] {4, 2, 1, 3, 0, 1, 2}));
        System.out.println(Arrays.toString(maxProfitDays(new int[]{17, 11, 60, 25, 150, 1, 31, 150})));
+       System.out.println(sumOfPrimeFactors(91));
     }
 }    
