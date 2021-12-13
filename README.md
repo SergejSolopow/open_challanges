@@ -43,5 +43,6 @@ Problems solved are:
   Description: https://www.codecademy.com/code-challenges/code-challenge-maximize-stock-trading-profit-java
 
 11. Sum of Prime Factors. Here i've used Iterator interface instead of for(){} flow control
+  
   Description: https://www.codecademy.com/code-challenges/code-challenge-sum-of-prime-factors-java
 
