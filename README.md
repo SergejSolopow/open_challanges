@@ -46,3 +46,5 @@ Problems solved are:
   
   Description: https://www.codecademy.com/code-challenges/code-challenge-sum-of-prime-factors-java
 
+12. Sum of two elements in array which match any given number
+
